@@ -7,6 +7,9 @@ class Solution {
         if (n1!=n2) return false;
         for (int i=0; i< n1;i++){
             hashmap.put(s.charAt(i),hashmap.getOrDefault(s.charAt(i),0)+1);
+           // hashmap2.put(t.charAt(i),hashmap2.getOrDefault(t.charAt(i),0)+1);
+        }
+         for (int i=0; i< n2;i++){
             hashmap2.put(t.charAt(i),hashmap2.getOrDefault(t.charAt(i),0)+1);
         }
         if(hashmap.equals(hashmap2)) return true;
