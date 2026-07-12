@@ -10,17 +10,16 @@ class Solution {
 
         //lets optimize
         int count=0;
+     int row_l=grid[0].length;
+        int lastNeg=row_l-1;
         for(int i=0;i<grid.length;i++){ //i is current row
             //binary approach now O(m log n)
-           
-            int row_l=grid[i].length;
-            int lastNeg=row_l-1;
-            //handling ede cases
+            //handling edge cases
             if(grid[i][0]<0){
                 count+=row_l;
                 continue;
             }
-            if(grid[i][lastNeg]>0)continue;
+            if(grid[i][row_l-1]>0)continue;
 
             int left=0;
             int right=lastNeg;
@@ -31,7 +30,7 @@ class Solution {
                 else if(grid[i][mid]<0)right=mid-1;
             }
            count+=row_l-left;
-           lastNeg=left; //fasting the alg 
+           lastNeg=left; //optimization
         }
 return count;
     }
