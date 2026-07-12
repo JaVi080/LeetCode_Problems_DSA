@@ -19,9 +19,7 @@ class Solution {
                 if(i[mid]>=0)left=mid+1;
                 else if(i[mid]<0)right=mid-1;
             }
-            for(int j=left;j<i.length;j++){
-                count++;
-            }
+           count+=i.length-left;
         }
 return count;
     }
